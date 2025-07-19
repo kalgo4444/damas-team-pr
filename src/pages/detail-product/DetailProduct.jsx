@@ -1,12 +1,13 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from "react";
+import { useFetch } from "../../hooks/useFetch";
+import { useParams } from "react-router-dom";
 
 const DetailProduct = () => {
+	const { id } = useParams();
+	const { data, error, loading } = useFetch(`/products/${id}`);
 
-  const { id } = useParams()
-  return (
-    <div>Abdulaziz Section</div>
-  )
-}
+	console.dir(data);
+	return <div>Abdulaziz Section</div>;
+};
 
-export default DetailProduct
+export default React.memo(DetailProduct);
