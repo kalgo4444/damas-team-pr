@@ -4,7 +4,7 @@ import Card from '../card/Card'
 import Skeleton from '../skeleton/Skeleton'
 
 const Products = () => {
-  const { data, error, loading } = useFetch("/products", { limit: 8 })
+  const { data, error, loading } = useFetch("/products", { limit: 8 ,skip:5})
 
   return (
     <div>
