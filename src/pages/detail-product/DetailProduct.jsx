@@ -67,7 +67,7 @@ const DetailProduct = () => {
 										{data.title}
 									</h2>
 									<p className='text-base sm:text-lg md:text-xl lg:text-product-price text-product-second font-semibold'>
-										Rs. {data.price}
+										Rs. {(data.price * count).toFixed(2)}
 									</p>
 									<div className='flex items-center gap-6 mt-3 '>
 										<div className='flex items-center gap-1.5 text-lg text-yellow-300'>
