@@ -20,7 +20,7 @@ const Card = ({ data }) => {
               onClick={() => navigate(`/product/${product.id}`)}
             />
 
-            <div className="flex flex-col justify-between flex-grow bg-[#F4F5F7] p-4">
+            <div className="text-left flex flex-col justify-between flex-grow bg-[#F4F5F7] p-4">
               <div>
                 <h3 className="font-semibold text-[18px] mb-1">{product.title}</h3>
                 <p className="text-sm text-[#898989] mb-2">{product.brand}</p>
@@ -34,4 +34,4 @@ const Card = ({ data }) => {
   )
 }
 
-export default Card
+export default React.memo(Card)
