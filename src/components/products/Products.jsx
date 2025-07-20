@@ -1,5 +1,5 @@
 import React from 'react'
-import { useFetch } from '../../hooks/useFetch' // если это твой кастомный хук
+import { useFetch } from '../../hooks/useFetch'
 import Card from '../card/Card'
 import Skeleton from '../skeleton/Skeleton'
 
