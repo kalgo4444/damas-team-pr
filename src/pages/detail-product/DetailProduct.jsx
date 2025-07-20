@@ -3,7 +3,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
-// import productsSelect from "../../assets/images/productsSelect.png";
+import productsSelect from "../../assets/productsSelect.png";
 
 const DetailProduct = () => {
 	const [count, setCount] = React.useState(1);
@@ -177,7 +177,7 @@ const DetailProduct = () => {
 										.fill()
 										.map((_, i) => (
 											<div key={i} className='w-full md:w-1/2 bg-second rounded-border-radius'>
-												<img src='' alt='productsSelect image' loading='lazy' />
+												<img src={productsSelect} alt='productsSelect image' loading='lazy' />
 											</div>
 										))}
 								</div>
