@@ -36,7 +36,7 @@ const DetailProduct = () => {
 						</div>
 						<div className='container mt-8 max-md:flex-col flex  gap-[60px] lg:gap-[105px]'>
 							<div className='w-full md:w-[45%] max-md:flex-col-reverse flex gap-8 '>
-								<div className='w-full sm:w-3/12 flex flex-row sm:flex-col gap-1.5 lg:gap-2.5'>
+								<div className='w-full sm:w-3/12 flex flex-row md:flex-col gap-1.5 lg:gap-2.5'>
 									{data?.images.map((item, inx) => (
 										<div
 											key={inx}
