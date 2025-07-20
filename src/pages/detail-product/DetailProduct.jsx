@@ -4,12 +4,16 @@ import { useParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import productsSelect from "../../assets/productsSelect.png";
+import Card2 from "../../components/card/Card2";
 
 const DetailProduct = () => {
 	const [count, setCount] = React.useState(1);
 	const [showImageIndex, setShowImageIndex] = React.useState(0);
 	const { id } = useParams();
 	const { data, error, loading } = useFetch(`/products/${id}`);
+	const obj = useFetch(`/products`, { limit: 4, skip: 10 });
+	console.log(obj.data?.products);
+
 	React.useLayoutEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -111,7 +115,7 @@ const DetailProduct = () => {
 											<button
 												disabled={count >= 10}
 												onClick={() => setCount(p => p + 1)}
-												className='cursor-pointer'
+												className='cursor-pointer active:bg-neutral-100 px-4'
 											>
 												+
 											</button>
@@ -119,7 +123,7 @@ const DetailProduct = () => {
 											<button
 												disabled={count <= 0}
 												onClick={() => setCount(p => p - 1)}
-												className='cursor-pointer'
+												className='cursor-pointer active:bg-neutral-100 px-4'
 											>
 												{"-"}
 											</button>
@@ -143,7 +147,7 @@ const DetailProduct = () => {
 										<li>: {data.sku}</li>
 										<li>: {data.category}</li>
 										<li>: {data.tags[0]}</li>
-										<li className='flex items-center gap-2'>
+										<li className='flex items-center gap-5 text-lg text-black'>
 											<FaFacebook />
 											<FaLinkedin />
 											<FaTwitter />
@@ -155,9 +159,11 @@ const DetailProduct = () => {
 						<div className='mt-14 w-full border-y border-gray-400 py-12'>
 							<div className='container'>
 								<div className='text-sm md:text-base lg:text-2xl flex items-center justify-center gap-8 md:gap-[52px] font-semibold text-product-second'>
-									<h3 className='text-black'>Description</h3>
-									<h3>Additional Information</h3>
-									<h3>Reviews [5]</h3>
+									<h3 className='hover:text-black duration-300 cursor-pointer'>Description</h3>
+									<h3 className='hover:text-black duration-300 cursor-pointer'>
+										Additional Information
+									</h3>
+									<h3 className='hover:text-black duration-300 cursor-pointer'>Reviews [5]</h3>
 								</div>
 								<div className='mt-9 text-product-second text-sm md:text-base'>
 									Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active
@@ -181,6 +187,12 @@ const DetailProduct = () => {
 											</div>
 										))}
 								</div>
+							</div>
+						</div>
+						<div className=' w-full border-b border-gray-400 py-12'>
+							<div className='container'>
+								<h2 className='text-3xl font-semibold text-center'> Lorem, ipsum dolor.</h2>
+								<Card2 date={obj.data?.products} />
 							</div>
 						</div>
 					</section>
