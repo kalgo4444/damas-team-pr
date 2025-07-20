@@ -41,7 +41,7 @@ const DetailProduct = () => {
 										<div
 											key={inx}
 											onClick={() => setShowImageIndex(inx)}
-											className={`bg-second border border-transparent rounded-border-radius cursor-pointer`}
+											className={`bg-second border border-transparent rounded-border-radius cursor-pointer p-3`}
 										>
 											<img
 												src={item}
