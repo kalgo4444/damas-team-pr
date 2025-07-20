@@ -152,7 +152,7 @@ const DetailProduct = () => {
 								</div>
 							</div>
 						</div>
-						<div className='w-full border-y border-gray-400 py-12'>
+						<div className='mt-14 w-full border-y border-gray-400 py-12'>
 							<div className='container'>
 								<div className='text-sm md:text-base lg:text-2xl flex items-center justify-center gap-8 md:gap-[52px] font-semibold text-product-second'>
 									<h3 className='text-black'>Description</h3>
