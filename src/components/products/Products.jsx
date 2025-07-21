@@ -1,7 +1,7 @@
 import React from 'react'
-import { useFetch } from '../../hooks/useFetch'
 import Card from '../card/Card'
 import Skeleton from '../skeleton/Skeleton'
+import { useFetch } from '../../hooks/useFetch'
 
 const Products = () => {
   const { data, error, loading } = useFetch("/products", { limit: 8 ,skip:5})
