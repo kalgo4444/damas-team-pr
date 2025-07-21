@@ -24,7 +24,10 @@ const DetailProduct = () => {
 			<>
 				{error && <div>Error</div>}
 				{loading ? (
-					<div className='container mt-10 animate-pulse bg-second min-h-[60vh]'></div>
+					<div className='container mt-10 animate-puls min-h-[80vh] flex gap-10 animate-pulse'>
+						<div className='w-2/5 h-[60vh] bg-gray-400 rounded-border-radius mt-20'></div>
+						<div className='w-2/3 h-[60vh] bg-gray-400 rounded-border-radius mt-20'></div>
+					</div>
 				) : (
 					<section className='overflow-hidden'>
 						<div className='h-[100px] bg-second w-full flex items-center'>
