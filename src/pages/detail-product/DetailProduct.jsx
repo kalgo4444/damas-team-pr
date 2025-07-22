@@ -24,9 +24,9 @@ const DetailProduct = () => {
 			<>
 				{error && <div>Error</div>}
 				{loading ? (
-					<div className='container mt-10 animate-puls min-h-[80vh] flex gap-10 animate-pulse'>
-						<div className='w-2/5 h-[60vh] bg-gray-400 rounded-border-radius mt-20'></div>
-						<div className='w-2/3 h-[60vh] bg-gray-400 rounded-border-radius mt-20'></div>
+					<div className='container mt-10 animate-puls min-h-[80vh] max-md:flex-col flex gap-10 animate-pulse'>
+						<div className='w-full md:w-2/5 h-[60vh] bg-second rounded-border-radius mt-20'></div>
+						<div className='w-2/3 h-[60vh] max-md:hidden bg-second rounded-border-radius mt-20'></div>
 					</div>
 				) : (
 					<section className='overflow-hidden'>
@@ -113,8 +113,8 @@ const DetailProduct = () => {
 											<div className='size-8 rounded-full bg-main cursor-pointer'></div>
 										</div>
 									</div>
-									<div className='mt-8 w-full flex items-center gap-3.5'>
-										<div className='flex items-center justify-between py-4 px-2 w-1/5 border rounded-border-radius'>
+									<div className='mt-8 w-full flex max-md:flex-col items-center gap-3.5'>
+										<div className='flex items-center justify-between py-4 px-2 w-2/5 md:w-1/5 border rounded-border-radius'>
 											<button
 												disabled={count >= 10}
 												onClick={() => setCount(p => p + 1)}
@@ -131,10 +131,10 @@ const DetailProduct = () => {
 												{"-"}
 											</button>
 										</div>
-										<button className='w-2/5 border py-4 rounded-border-radius font-semibold cursor-pointer duration-150 active:bg-white active:text-black bg-white hover:bg-black hover:text-white'>
+										<button className='w-3/5 md:w-2/5 border py-4 rounded-border-radius font-semibold cursor-pointer duration-150 active:bg-white active:text-black bg-white hover:bg-black hover:text-white'>
 											Add To Cart
 										</button>
-										<button className='w-2/5 border py-4 rounded-border-radius font-semibold cursor-pointer duration-150 active:bg-white active:text-black bg-white hover:bg-black hover:text-white'>
+										<button className='w-3/5 md:w-2/5 border py-4 rounded-border-radius font-semibold cursor-pointer duration-150 active:bg-white active:text-black bg-white hover:bg-black hover:text-white'>
 											+ Compare
 										</button>
 									</div>
