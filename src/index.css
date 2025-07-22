@@ -6,7 +6,9 @@
 body {
 	font-family: Poppins;
 }
-
+* {
+	/* border: 1px solid red !important; */
+}
 .container {
 	max-width: 1268px;
 	width: 100%;
