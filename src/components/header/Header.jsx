@@ -1,5 +1,9 @@
-const Header = () => {
-  return <div>Header<div/>
-};
+import React from 'react'
 
-export default React.memo(Header);
+const Header = () => {
+  return (
+    <div>Header</div>
+  )
+}
+
+export default Header
