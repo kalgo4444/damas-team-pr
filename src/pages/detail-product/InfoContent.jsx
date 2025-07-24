@@ -2,8 +2,12 @@ import React from "react";
 import { IoStarSharp } from "react-icons/io5";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+const size = ["l", "xl", "xs"];
+
 const InfoContent = ({ data }) => {
 	const [count, setCount] = React.useState(1);
+	const [isActive, setIsActive] = React.useState(0);
+
 	return (
 		<div className='w-full md:w-[50%] lg:w-[55%]'>
 			<div className='border-b border-second-text pb-[60px]'>
@@ -27,15 +31,17 @@ const InfoContent = ({ data }) => {
 				<div className='mt-6'>
 					<p className='text-product-text text-product-second'>Size</p>
 					<div className='mt-3 flex items-center gap-3 text-sm md:text-base'>
-						<button className='bg-second hover:bg-main size-10 md:size-8 rounded-border-radius cursor-pointer duration-150'>
-							L
-						</button>
-						<button className='bg-second hover:bg-main size-10 md:size-8 rounded-border-radius cursor-pointer duration-150'>
-							XL
-						</button>
-						<button className='bg-second hover:bg-main size-10 md:size-8 rounded-border-radius cursor-pointer duration-150'>
-							XS
-						</button>
+						{size?.map((item, inx) => (
+							<button
+								key={inx}
+								onClick={() => setIsActive(inx)}
+								className={`bg-second uppercase hover:bg-main size-10 md:size-8 rounded-border-radius cursor-pointer duration-150 ${
+									isActive === inx ? "isActive2" : ""
+								}`}
+							>
+								{item}
+							</button>
+						))}
 					</div>
 				</div>
 				<div className='mt-6'>

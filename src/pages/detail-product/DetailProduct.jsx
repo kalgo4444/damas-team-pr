@@ -10,6 +10,7 @@ import ImageContent from "./ImageContent";
 import InfoContent from "./InfoContent";
 
 const DetailProduct = () => {
+	window.scrollTo(0, 0);
 	const { id } = useParams();
 	const { data, error, loading } = useFetch(`/products/${id}`);
 	const obj = useFetch(`/products`, { limit: 4, skip: 10 });
