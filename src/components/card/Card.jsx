@@ -20,14 +20,16 @@ const Card = ({ data }) => {
 							onClick={() => navigate(`/product/${product.id}`)}
 						/>
 
-						<div className='text-left flex flex-col justify-between flex-grow bg-[#F4F5F7] p-4'>
+						<div className='text-left flex flex-col justify-between flex-grow bg-second p-4'>
 							<div>
 								<h3 className='font-semibold text-[18px] mb-1'>{product.title}</h3>
 								<p className='text-sm text-[#898989] mb-2'>{product.brand}</p>
 							</div>
-							<div className="flex justify-between items-center relative">
-							<strong className='text-[18px] font-bold mt-auto'>Rp {product.price}</strong>
-							<button className=" text-[25px] cursor-pointer  "  ><FcLike /></button>
+							<div className='flex justify-between items-center relative'>
+								<strong className='text-[18px] font-bold mt-auto'>Rp {product.price}</strong>
+								<button className=' text-[25px] cursor-pointer'>
+									<FcLike />
+								</button>
 							</div>
 						</div>
 					</div>
