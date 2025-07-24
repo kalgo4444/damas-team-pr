@@ -1,77 +1,147 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
+import mainLogo from "../../assets/Frame 168.png";
+import { FaRegUser } from "react-icons/fa6";
+import { BsSearch } from "react-icons/bs";
+import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross1 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
-import { FaUserLarge } from "react-icons/fa6";
-import { GoSearch } from "react-icons/go";
-import { RiDislikeLine } from "react-icons/ri";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { HiMenuAlt3 } from "react-icons/hi";
-import { NAVLINK } from "../../static";
 
 const Header = () => {
-	const [show, setShow] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDrawer = () => setIsOpen(!isOpen);
 
-	return (
-		<header className='h-[100px] w-full bg-white sticky top-0 left-0 z-50 shadow-md'>
-			<nav className='container h-full flex items-center justify-between'>
-				<NavLink to={"/"}>
-					<img src={logo} alt='Header logo' loading='lazy' />
-				</NavLink>
-				<>
-					<ul className='flex items-center gap-[40px] xl:gap-[75px] relative max-md:hidden'>
-						{NAVLINK?.map((item, index) => (
-							<li
-								key={index}
-								className='font-medium text-base hover:text-main duration-150 active:text-black'
-							>
-								<NavLink to={item.link}>{item.name}</NavLink>
-							</li>
-						))}
-					</ul>
-				</>
-				{show ? (
-					<>
-						<div
-							onClick={() => setShow(!show)}
-							className='fixed top-0 left-0 right-0 bottom-0 bg-neutral-950/25 z-30 duration-300'
-						></div>
-						<ul className='flex flex-col items-center p-10 gap-[75px] bg-neutral-100 z-40 shadow-2xl fixed top-0 left-0 max-md:h-screen max-md:w-3/4'>
-							{NAVLINK?.map((item, index) => (
-								<li
-									key={index}
-									className='font-medium text-base hover:text-main duration-150 active:text-black'
-								>
-									<NavLink onClick={() => setShow(!show)} to={item.link}>
-										{item.name}
-									</NavLink>
-								</li>
-							))}
-						</ul>
-					</>
-				) : null}
-				<div className='flex items-center gap-5 xl:gap-[45px] text-xl lg:text-2xl max-md:hidden'>
-					<button className='cursor-pointer'>
-						<FaUserLarge />
-					</button>
-					<button className='cursor-pointer'>
-						<RiDislikeLine />
-					</button>
-					<button className='cursor-pointer'>
-						<GoSearch />
-					</button>
-					<button className='cursor-pointer'>
-						<AiOutlineShoppingCart />
-					</button>
-				</div>
-				<button
-					onClick={() => setShow(!show)}
-					className='max-md:block hidden text-2xl cursor-pointer'
-				>
-					<HiMenuAlt3 />
-				</button>
-			</nav>
-		</header>
-	);
+  return (
+    <div className="fixed top-0 left-0 w-full bg-white z-50 shadow">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <NavLink to="/">
+          <img src={mainLogo} alt="main logo" className="h-8 md:h-auto" />
+        </NavLink>
+
+        <div className="hidden md:flex gap-6 lg:gap-10 items-center">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+                isActive ? "text-[#B88E2F] font-semibold" : ""
+              }`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/shop"
+            className={({ isActive }) =>
+              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+                isActive ? "text-[#B88E2F] font-semibold" : ""
+              }`
+            }
+          >
+            Shop
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+                isActive ? "text-[#B88E2F] font-semibold" : ""
+              }`
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+                isActive ? "text-[#B88E2F] font-semibold" : ""
+              }`
+            }
+          >
+            Contact
+          </NavLink>
+        </div>
+
+        <div className="flex gap-5 items-center">
+          <FaRegUser
+            className="hover:scale-110 transition duration-300 cursor-pointer"
+            size={20}
+          />
+          <BsSearch
+            className="hover:scale-110 transition duration-300 cursor-pointer"
+            size={20}
+          />
+          <AiOutlineHeart
+            className="hover:scale-110 transition duration-300 cursor-pointer"
+            size={20}
+          />
+          <AiOutlineShoppingCart
+            className="hover:scale-110 transition duration-300 cursor-pointer"
+            size={20}
+          />
+
+          <div className="md:hidden">
+            <GiHamburgerMenu
+              onClick={toggleDrawer}
+              size={24}
+              className="cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`fixed top-0 -0 h-full w-64 bg-white z-40 shadow-md p-6 transform transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-lg font-semibold">Menu</h2>
+          <RxCross1
+            onClick={toggleDrawer}
+            className="cursor-pointer"
+            size={24}
+          />
+        </div>
+        <div className="flex flex-col gap-4">
+          <NavLink
+            to="/"
+            onClick={toggleDrawer}
+            className="hover:text-[#B88E2F] transition duration-300"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/shop"
+            onClick={toggleDrawer}
+            className="hover:text-[#B88E2F] transition duration-300"
+          >
+            Shop
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={toggleDrawer}
+            className="hover:text-[#B88E2F] transition duration-300"
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={toggleDrawer}
+            className="hover:text-[#B88E2F] transition duration-300"
+          >
+            Contact
+          </NavLink>
+        </div>
+      </div>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/15  md:hidden"
+          onClick={toggleDrawer}
+        ></div>
+      )}
+    </div>
+  );
 };
 
 export default React.memo(Header);
