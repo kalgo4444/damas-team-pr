@@ -10,9 +10,8 @@ import { NAVLINK } from "../../static";
 
 const Header = () => {
 	const [show, setShow] = useState(false);
-
 	return (
-		<header className='h-[100px] w-full bg-white sticky top-0 left-0 z-50 shadow-md'>
+		<header className='h-[85px]  w-full bg-white sticky top-0 left-0 z-50 shadow-md'>
 			<nav className='container h-full flex items-center justify-between'>
 				<NavLink to={"/"}>
 					<img src={logo} alt='Header logo' loading='lazy' />
