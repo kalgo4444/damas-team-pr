@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FcLike } from "react-icons/fc";
 
 const Card = ({ data }) => {
 	const navigate = useNavigate();
@@ -10,7 +11,7 @@ const Card = ({ data }) => {
 				{data?.map(product => (
 					<div
 						key={product.id}
-						className='flex flex-col border rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300'
+						className='flex flex-col border-[.1px] border-[#F1F1F1] rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300'
 					>
 						<img
 							src={product.thumbnail}
@@ -24,7 +25,10 @@ const Card = ({ data }) => {
 								<h3 className='font-semibold text-[18px] mb-1'>{product.title}</h3>
 								<p className='text-sm text-[#898989] mb-2'>{product.brand}</p>
 							</div>
+							<div className="flex justify-between items-center relative">
 							<strong className='text-[18px] font-bold mt-auto'>Rp {product.price}</strong>
+							<button className=" text-[25px] cursor-pointer  "  ><FcLike /></button>
+							</div>
 						</div>
 					</div>
 				))}
