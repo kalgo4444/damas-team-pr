@@ -1,15 +1,24 @@
 import React from "react";
 
 const ImageContent = ({ data }) => {
+	const [isClicked, setIsClicked] = React.useState(0);
 	const [showImageIndex, setShowImageIndex] = React.useState(0);
+
+	const imageClick = inx => {
+		setIsClicked(inx);
+		setShowImageIndex(inx);
+	};
+
 	return (
 		<div className='w-full md:w-[50%] lg:w-[45%] max-md:flex-col-reverse flex gap-8 '>
 			<div className='w-full sm:w-1/2 md:w-3/12 flex flex-row md:flex-col gap-1.5 lg:gap-2.5'>
 				{data?.images.map((item, inx) => (
 					<div
 						key={inx}
-						onClick={() => setShowImageIndex(inx)}
-						className={`bg-second border border-transparent rounded-border-radius cursor-pointer p-1`}
+						onClick={() => imageClick(inx)}
+						className={`bg-second border-2 border-transparent rounded-border-radius cursor-pointer p-1 ${
+							isClicked === inx ? "isActive" : ""
+						}`}
 					>
 						<img src={item} alt='img for select ' className='max-sm:h-[100px] max-sm:w-full' />
 					</div>
