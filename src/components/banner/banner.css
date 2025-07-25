@@ -1,0 +1,6 @@
+.bannerBg {
+  width: 100%;
+  min-height: 316px;
+  background: var(--color-gray-400);
+  background: url('../../assets/images/bannerBg.png') no-repeat center/cover;
+}

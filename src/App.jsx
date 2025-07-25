@@ -6,7 +6,6 @@ import DetailProduct from "./pages/detail-product/DetailProduct";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
-import User from "./pages/user/User";
 import About from "./pages/about/About";
 
 const App = () => {
@@ -18,7 +17,6 @@ const App = () => {
 					<Route path='/wishlist' element={<Wishlist />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/contact' element={<Contact />} />
-					<Route path='/user' element={<User />} />
 					<Route path='/about' element={<About />} />
 					<Route path='/product/:id' element={<DetailProduct />} />
 				</Route>

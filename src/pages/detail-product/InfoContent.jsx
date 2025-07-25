@@ -1,19 +1,23 @@
 import React from "react";
 import { IoStarSharp } from "react-icons/io5";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { useCart } from "../../zustand/useCart";
 
 const size = ["l", "xl", "xs"];
 
 const InfoContent = ({ data }) => {
-	const [count, setCount] = React.useState(1);
 	const [isActive, setIsActive] = React.useState(0);
+	const { toggleToCart, cart, incCart, decCart } = useCart();
+
+	let count = cart.filter(item => item.id === data.id);
 
 	return (
 		<div className='w-full md:w-[50%] lg:w-[55%]'>
 			<div className='border-b border-second-text pb-[60px]'>
 				<h2 className='text-3xl md:text-4xl lg:text-product-title font-semibold'>{data.title}</h2>
 				<p className='text-base sm:text-lg md:text-xl lg:text-product-price text-product-second font-semibold'>
-					Rs. {(data.price * count).toFixed(2)}
+					Rs.
+					{data.price}
 				</p>
 				<div className='flex items-center gap-6 mt-3 '>
 					<div className='flex items-center gap-1.5 text-lg text-yellow-300'>
@@ -55,23 +59,28 @@ const InfoContent = ({ data }) => {
 				<div className='mt-8 w-full flex max-md:flex-col items-center gap-3.5'>
 					<div className='flex items-center justify-between max-sm:mr-0 max-sm:ml-auto w-2/4 md:w-2/6 h-14 overflow-hidden border rounded-border-radius'>
 						<button
-							disabled={count >= 10}
-							onClick={() => setCount(p => p + 1)}
-							className='cursor-pointer active:bg-neutral-100 h-full flex-1/2'
+							disabled={count[0]?.quantity == null ? true : false}
+							onClick={() => incCart(data)}
+							className='cursor-pointer active:bg-neutral-100 h-full flex-1/2 disabled:opacity-30'
 						>
 							+
 						</button>
-						<div>{count}</div>
+						<div>{count[0]?.quantity == null ? 0 : count[0]?.quantity}</div>
 						<button
-							disabled={count <= 0}
-							onClick={() => setCount(p => p - 1)}
-							className='cursor-pointer active:bg-neutral-100 h-full flex-1/2'
+							disabled={
+								count[0]?.quantity == null ? true : count[0]?.quantity <= 0 && toggleToCart(data)
+							}
+							onClick={() => decCart(data)}
+							className='cursor-pointer active:bg-neutral-100 h-full flex-1/2 disabled:opacity-30'
 						>
 							{"-"}
 						</button>
 					</div>
-					<button className='w-full sm:w-3/5 md:w-2/3 border py-4 rounded-border-radius font-semibold cursor-pointer duration-150 active:bg-white active:text-black bg-white hover:bg-black hover:text-white'>
-						Add To Cart
+					<button
+						onClick={() => toggleToCart(data)}
+						className='w-full sm:w-3/5 md:w-2/3 border py-4 rounded-border-radius font-semibold cursor-pointer duration-150 active:bg-white active:text-black bg-white hover:bg-black hover:text-white'
+					>
+						{cart.some(list => list.id === data.id) ? "Remove From Card" : "Add To Cart"}
 					</button>
 					<button className='w-full sm:w-3/5 md:w-2/3 border py-4 rounded-border-radius font-semibold cursor-pointer duration-150 active:bg-white active:text-black bg-white hover:bg-black hover:text-white'>
 						+ Compare
