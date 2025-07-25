@@ -1,7 +1,20 @@
 import React from "react";
+import Banner from "../../components/banner/Banner";
+import Quality from "../../components/quality/Quality";
+import { useCart } from "../../zustand/useCart";
+import Empaty from "../../components/skeleton/Empaty";
+import PriceCart from "../../components/price-cart/PriceCart";
 
 const Cart = () => {
-	return <div>Cart</div>;
+	const { cart } = useCart();
+	console.log(cart);
+	return (
+		<section>
+			<Banner title={"Cart"} text={"Cart"} />
+			{cart.length == 0 ? <Empaty /> : <PriceCart data={cart} />}
+			<Quality />
+		</section>
+	);
 };
 
-export default Cart;
+export default React.memo(Cart);
