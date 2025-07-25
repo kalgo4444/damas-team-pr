@@ -1,10 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FcLike } from "react-icons/fc";
+import { CiHeart } from "react-icons/ci";
+import { useStore } from "../../zustand/useStore";
 
 const Card = ({ data }) => {
 	const navigate = useNavigate();
-
+	const {toggleWishlist, wishlist} = useStore()
+	console.log(wishlist);
+	
 	return (
 		<div className='container px-4'>
 			<div className='grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
@@ -27,8 +31,12 @@ const Card = ({ data }) => {
 							</div>
 							<div className='flex justify-between items-center relative'>
 								<strong className='text-[18px] font-bold mt-auto'>Rp {product.price}</strong>
-								<button className=' text-[25px] cursor-pointer'>
+								<button onClick={() => toggleWishlist(product)} className=' text-[25px] cursor-pointer'>
+									{
+									wishlist.some((item) => item.id === product.id) ?
 									<FcLike />
+									 :
+									 <CiHeart />}
 								</button>
 							</div>
 						</div>

@@ -1,7 +1,14 @@
 import React from "react";
+import { useStore } from "../../zustand/useStore";
+import Products from "../../components/products/Products";
 
 const Wishlist = () => {
-	return <div>Washlist</div>;
+	const wishlist = useStore((state) => state.wishlist);
+
+	
+	return <div>
+		<Products data={wishlist} />
+	</div>;
 };
 
-export default Wishlist;
+export default React.memo(Wishlist);
