@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-[73px]">
+    <>
       <Banner title="Contact" text="Contact" />
 
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -129,7 +129,7 @@ const Contact = () => {
       <div className="mt-16">
         <Quality />
       </div>
-    </div>
+    </>
   );
 };
 

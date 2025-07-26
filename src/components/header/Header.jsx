@@ -12,7 +12,7 @@ const Header = () => {
   const toggleDrawer = () => setIsOpen(!isOpen);
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white z-50 shadow">
+    <div className="sticky top-0 left-0 w-full bg-white z-50 shadow">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <NavLink to="/">
           <img src={mainLogo} alt="main logo" className="h-8 md:h-auto" />
