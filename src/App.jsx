@@ -3,19 +3,29 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/not-found/NotFound";
 import Layout from "./pages/layout/Layout";
 import DetailProduct from "./pages/detail-product/DetailProduct";
+import Wishlist from "./pages/wishlist/Wishlist";
+import Cart from "./pages/cart/Cart";
+import Contact from "./pages/contact/Contact";
+import User from "./pages/user/User";
+import About from "./pages/about/About";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index={true} element={<Home />} />
-          <Route path="/product/:id" element={<DetailProduct />} />
-        </Route>
-          <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path='/' element={<Layout />}>
+					<Route index={true} element={<Home />} />
+					<Route path='/wishlist' element={<Wishlist />} />
+					<Route path='/cart' element={<Cart />} />
+					<Route path='/contact' element={<Contact />} />
+					<Route path='/user' element={<User />} />
+					<Route path='/about' element={<About />} />
+					<Route path='/product/:id' element={<DetailProduct />} />
+				</Route>
+				<Route path='*' element={<NotFound />} />
+			</Routes>
+		</BrowserRouter>
+	);
 };
 
 export default App;

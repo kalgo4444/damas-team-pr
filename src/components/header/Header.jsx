@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import mainLogo from "../../assets/Frame 168.png";
+import mainLogo from "../../assets/logo.png";
 import { FaRegUser } from "react-icons/fa6";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
