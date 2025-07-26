@@ -40,14 +40,14 @@ const Header = () => {
             Shop
           </NavLink>
           <NavLink
-            to="/about"
+            to="/blog"
             className={({ isActive }) =>
               `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
                 isActive ? "text-[#B88E2F] font-semibold" : ""
               }`
             }
           >
-            About
+            Blog
           </NavLink>
           <NavLink
             to="/contact"
