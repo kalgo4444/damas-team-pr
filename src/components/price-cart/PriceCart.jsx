@@ -24,7 +24,7 @@ const PriceCart = ({ data }) => {
 						</thead>
 						<tbody>
 							{data?.map(item => (
-								<tr>
+								<tr >
 									<td
 										onClick={() => navigate(`/product/${item.id}`)}
 										className='flex items-center gap-8 cursor-pointer'
@@ -68,7 +68,7 @@ const PriceCart = ({ data }) => {
 					</table>
 				</div>
 				{/*  */}
-				<div className='w-full md:w-2/6 max-h-[400px] h-full bg-second pt-5 pb-20'>
+				<div className='sticky top-[100px] w-full md:w-2/6 min-h-[450px]  rounded-border-radius-middle h-full bg-second pt-14 pb-16'>
 					<h2 className='font-semibold text-2xl md:text-3xl text-center'>Cart Totals</h2>
 					<div className='mt-16 mx-auto w-3/4 lg:w-1/2 flex justify-between'>
 						<span>Subtotal</span>
