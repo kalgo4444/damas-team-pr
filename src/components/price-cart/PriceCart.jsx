@@ -24,7 +24,7 @@ const PriceCart = ({ data }) => {
 						</thead>
 						<tbody>
 							{data?.map(item => (
-								<tr >
+								<tr key={item.id}>
 									<td
 										onClick={() => navigate(`/product/${item.id}`)}
 										className='flex items-center gap-8 cursor-pointer'
