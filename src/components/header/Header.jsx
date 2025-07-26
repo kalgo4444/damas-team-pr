@@ -62,22 +62,33 @@ const Header = () => {
         </div>
 
         <div className="flex gap-5 items-center">
-          <FaRegUser
-            className="hover:scale-110 transition duration-300 cursor-pointer"
+          <NavLink to={"/about"}>
+                      <FaRegUser
+            className="transition duration-300 cursor-pointer"
             size={20}
           />
-          <BsSearch
-            className="hover:scale-110 transition duration-300 cursor-pointer"
+          </NavLink>
+          <NavLink to={"/search"}>
+                      <BsSearch
+            className="transition duration-300 cursor-pointer"
             size={20}
           />
-          <AiOutlineHeart
-            className="hover:scale-110 transition duration-300 cursor-pointer"
+          </NavLink>
+          <NavLink to={"/wishlist"}>
+                      <AiOutlineHeart
+            className="transition duration-300 cursor-pointer"
             size={20}
           />
-          <AiOutlineShoppingCart
-            className="hover:scale-110 transition duration-300 cursor-pointer"
+          </NavLink>
+          <NavLink to={"/cart"}>
+                      <AiOutlineShoppingCart
+            className="transition duration-300 cursor-pointer"
             size={20}
           />
+          </NavLink>
+
+
+
 
           <div className="md:hidden">
             <GiHamburgerMenu
