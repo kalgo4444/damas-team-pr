@@ -7,7 +7,6 @@ import PriceCart from "../../components/price-cart/PriceCart";
 
 const Cart = () => {
 	const { cart } = useCart();
-	console.log(cart);
 	return (
 		<section>
 			<Banner title={"Cart"} text={"Cart"} />
