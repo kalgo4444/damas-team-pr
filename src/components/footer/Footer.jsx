@@ -18,7 +18,7 @@ const Footer = () => {
 					<h3 className='text-gray-500 font-semibold mb-3'>Links</h3>
 					<ul className='space-y-2'>
 						{NAVLINK?.map((item, inx) => (
-							<li>
+							<li key={inx}>
 								<Link
 									onClick={() => {
 										window.scrollTo(0, 0);
@@ -37,7 +37,7 @@ const Footer = () => {
 					<h3 className='text-gray-500 font-semibold mb-3'>Help</h3>
 					<ul className='space-y-2'>
 						{FOOTERHELP?.map((item, inx) => (
-							<li>
+							<li key={inx}>
 								<Link
 									onClick={() => {
 										window.scrollTo(0, 0);
