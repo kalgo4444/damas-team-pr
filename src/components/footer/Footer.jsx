@@ -4,8 +4,8 @@ import { NAVLINK, FOOTERHELP } from "../../static";
 
 const Footer = () => {
 	return (
-		<footer className='bg-white text-gray-800 px-6 py-10'>
-			<div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+		<footer className='bg-white text-gray-800 py-10'>
+			<div className='container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
 				<div>
 					<h2 className='text-2xl font-bold mb-2'>Funiro.</h2>
 					<p className='text-sm text-gray-500'>
@@ -62,7 +62,7 @@ const Footer = () => {
 						/>
 						<button
 							type='button'
-							className='text-sm font-bold border-b border-black transition cursor-pointer'
+							className='text-sm font-bold border-b border-black transition cursor-pointer block md:hidden'
 						>
 							SUBSCRIBE
 						</button>
