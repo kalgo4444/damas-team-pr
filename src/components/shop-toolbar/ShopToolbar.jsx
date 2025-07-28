@@ -79,4 +79,4 @@ const ShopToolbar = ({ onSearch, show = 16, total = 32, sortBy = 'default', onSh
   );
 };
 
-export default ShopToolbar;
+export default React.memo(ShopToolbar);
