@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import mainLogo from "../../assets/logo.png";
 import { FaRegUser } from "react-icons/fa6";
 import { BsSearch } from "react-icons/bs";
@@ -6,10 +6,15 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
+import ItemCount from "./ItemCount";
+import { useCart } from "../../zustand/useCart";
+import { useStore } from "../../zustand/useStore";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => setIsOpen(!isOpen);
+  const { cart } = useCart();
+  const { wishlist } = useStore();
 
   return (
     <div className="sticky top-0 left-0 w-full bg-white z-50 shadow">
@@ -63,32 +68,31 @@ const Header = () => {
 
         <div className="flex gap-5 items-center">
           <NavLink to={"/about"}>
-                      <FaRegUser
-            className="transition duration-300 cursor-pointer"
-            size={20}
-          />
+            <FaRegUser
+              className="transition duration-300 cursor-pointer"
+              size={20}
+            />
           </NavLink>
           <NavLink to={"/search"}>
-                      <BsSearch
-            className="transition duration-300 cursor-pointer"
-            size={20}
-          />
+            <BsSearch
+              className="transition duration-300 cursor-pointer"
+              size={20}
+            />
           </NavLink>
-          <NavLink to={"/wishlist"}>
-                      <AiOutlineHeart
-            className="transition duration-300 cursor-pointer"
-            size={20}
-          />
+          <NavLink className="relative" to={"/wishlist"}>
+            <AiOutlineHeart
+              className="transition duration-300 cursor-pointer"
+              size={20}
+            />
+            <ItemCount count={cart} />
           </NavLink>
-          <NavLink to={"/cart"}>
-                      <AiOutlineShoppingCart
-            className="transition duration-300 cursor-pointer"
-            size={20}
-          />
+          <NavLink className="relative" to={"/cart"}>
+            <AiOutlineShoppingCart
+              className="transition duration-300 cursor-pointer"
+              size={20}
+            />
+            <ItemCount count={wishlist} />
           </NavLink>
-
-
-
 
           <div className="md:hidden">
             <GiHamburgerMenu

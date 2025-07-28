@@ -1,6 +1,6 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
-const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 export const useStore = create((set) => ({
   wishlist: storedWishlist,
@@ -12,7 +12,7 @@ export const useStore = create((set) => ({
         ? state.wishlist.filter((item) => item.id !== product.id)
         : [...state.wishlist, product];
 
-      localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
       return { wishlist: updatedWishlist };
     }),
 }));
