@@ -6,6 +6,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
+import { IoHomeOutline } from "react-icons/io5";
 import ItemCount from "./ItemCount";
 import { useCart } from "../../zustand/useCart";
 import { useStore } from "../../zustand/useStore";
@@ -27,7 +28,7 @@ const Header = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+              `transition  cursor-pointer hover:text-[#B88E2F] ${
                 isActive ? "text-[#B88E2F] font-semibold" : ""
               }`
             }
@@ -37,7 +38,7 @@ const Header = () => {
           <NavLink
             to="/shop"
             className={({ isActive }) =>
-              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+              `transition cursor-pointer hover:text-[#B88E2F] ${
                 isActive ? "text-[#B88E2F] font-semibold" : ""
               }`
             }
@@ -47,7 +48,7 @@ const Header = () => {
           <NavLink
             to="/blog"
             className={({ isActive }) =>
-              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+              `transition cursor-pointer hover:text-[#B88E2F] ${
                 isActive ? "text-[#B88E2F] font-semibold" : ""
               }`
             }
@@ -57,7 +58,7 @@ const Header = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `transition duration-300 cursor-pointer hover:text-[#B88E2F] hover:scale-110 ${
+              `transition cursor-pointer hover:text-[#B88E2F] ${
                 isActive ? "text-[#B88E2F] font-semibold" : ""
               }`
             }
@@ -66,41 +67,31 @@ const Header = () => {
           </NavLink>
         </div>
 
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-5 items-center max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:w-full max-sm:h-14 max-sm:bg-white max-sm:justify-between max-sm:px-5">
+          <NavLink to={"/"} className="cursor-pointer text-2xl sm:hidden">
+            <IoHomeOutline />
+          </NavLink>
           <NavLink to={"/blog"}>
-            <FaRegUser
-              className="transition duration-300 cursor-pointer"
-              size={20}
-            />
+            <FaRegUser className="cursor-pointer" size={20} />
           </NavLink>
           <NavLink to={"/search"}>
-            <BsSearch
-              className="transition duration-300 cursor-pointer"
-              size={20}
-            />
+            <BsSearch className="cursor-pointer" size={20} />
           </NavLink>
           <NavLink className="relative" to={"/wishlist"}>
-            <AiOutlineHeart
-              className="transition duration-300 cursor-pointer"
-              size={20}
-            />
+            <AiOutlineHeart className="cursor-pointer" size={20} />
             <ItemCount count={wishlist} />
           </NavLink>
           <NavLink className="relative" to={"/cart"}>
-            <AiOutlineShoppingCart
-              className="transition duration-300 cursor-pointer"
-              size={20}
-            />
+            <AiOutlineShoppingCart className="cursor-pointer" size={20} />
             <ItemCount count={cart} />
           </NavLink>
-
-          <div className="md:hidden">
-            <GiHamburgerMenu
-              onClick={toggleDrawer}
-              size={24}
-              className="cursor-pointer"
-            />
-          </div>
+        </div>
+        <div className="md:hidden">
+          <GiHamburgerMenu
+            onClick={toggleDrawer}
+            size={24}
+            className="cursor-pointer"
+          />
         </div>
       </div>
 
