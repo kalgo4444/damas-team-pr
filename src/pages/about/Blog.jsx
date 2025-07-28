@@ -6,7 +6,7 @@ const Blog = () => {
   return (
     <section>
       <Banner title={"Blog"} text={"Blog"} />
-      {/* Code hare */}
+      <h1>Blog</h1>
       <Quality />
     </section>
   );
