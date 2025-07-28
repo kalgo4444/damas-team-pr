@@ -67,7 +67,7 @@ const Header = () => {
         </div>
 
         <div className="flex gap-5 items-center">
-          <NavLink to={"/about"}>
+          <NavLink to={"/blog"}>
             <FaRegUser
               className="transition duration-300 cursor-pointer"
               size={20}
@@ -84,14 +84,14 @@ const Header = () => {
               className="transition duration-300 cursor-pointer"
               size={20}
             />
-            <ItemCount count={cart} />
+            <ItemCount count={wishlist} />
           </NavLink>
           <NavLink className="relative" to={"/cart"}>
             <AiOutlineShoppingCart
               className="transition duration-300 cursor-pointer"
               size={20}
             />
-            <ItemCount count={wishlist} />
+            <ItemCount count={cart} />
           </NavLink>
 
           <div className="md:hidden">
