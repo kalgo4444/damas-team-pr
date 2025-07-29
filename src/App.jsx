@@ -9,6 +9,7 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/Blog";
 import Blog from "./pages/about/Blog";
 import Checkout from "./pages/checkout/Checkout";
+import Shop from "./pages/shop/Shop";
 
 const App = () => {
   return (
@@ -18,8 +19,10 @@ const App = () => {
           <Route index={true} element={<Home />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<DetailProduct />} />
           <Route path="/checkout" element={<Checkout />} />
 

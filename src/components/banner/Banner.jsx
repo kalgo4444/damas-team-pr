@@ -4,7 +4,7 @@ import bannerLogo from "../../assets/images/bannerLogo.png";
 
 const Banner = ({ title, text }) => {
 	return (
-		<div className='bannerBg mb-3'>
+		<div className='bannerBg '>
 			<div className='container min-h-[316px] flex flex-col gap-2.5 items-center justify-center'>
 				<img src={bannerLogo} alt='Banner logo' />
 				<h2 className='font-semibold text-2xl sm:text-4xl md:text-5xl'>{title}</h2>
