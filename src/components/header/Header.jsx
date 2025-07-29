@@ -124,11 +124,11 @@ const Header = () => {
             Shop
           </NavLink>
           <NavLink
-            to="/about"
+            to="/blog"
             onClick={toggleDrawer}
             className="hover:text-[#B88E2F] transition duration-300"
           >
-            About
+            Blog
           </NavLink>
           <NavLink
             to="/contact"
