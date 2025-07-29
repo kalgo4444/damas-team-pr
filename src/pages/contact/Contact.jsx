@@ -18,7 +18,23 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted data:", formData);
+
+    
+
+    const { name, email, subject, message } = formData;
+
+    let text = `🛒 <b>Yangi contact keldi</b>%0A%0A`;
+    text += `<b>Ism:</b> ${name}%0A`;
+    text += `<b>Email:</b> ${email}%0A`;
+    text += `<b>Mavzu:</b> ${subject}%0A`;
+    text += `<b>Xabar:</b> ${message}%0A`;
+
+    const token = "8447874613:AAHI85W-u9YjnrMXUpTHDO-ZERpYL4wUJsE";
+    const chat_id = "6128494778";
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${text}&parse_mode=HTML`;
+
+    
+
   };
 
   return (
@@ -35,7 +51,6 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* LEFT: Contact Info */}
           <div className="space-y-8">
             <div className="flex items-start gap-4">
               <FaMapMarkerAlt className="text-xl mt-1 text-black shrink-0" />
@@ -66,7 +81,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* RIGHT: Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-medium mb-1">Your name</label>
@@ -125,7 +139,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Quality Component */}
       <div className="mt-16">
         <Quality />
       </div>

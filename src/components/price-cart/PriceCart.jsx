@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { useCart } from "../../zustand/useCart";
+import { Link } from "react-router-dom";
 
 const PriceCart = ({ data }) => {
   const { toggleToCart, cart } = useCart();
@@ -57,7 +58,7 @@ const PriceCart = ({ data }) => {
                     className="cursor-pointer"
                     onClick={() => navigate(`/product/${item.id}`)}
                   >
-                    Rp. {(item.price * item.quantity).toFixed(2)}
+                    RS. {(item.price * item.quantity).toFixed(2)}
                   </td>
                   <td>
                     <button
@@ -85,12 +86,11 @@ const PriceCart = ({ data }) => {
             <span>Total</span>
             <span className="text-lg text-main">Rs. {price}</span>
           </div>
-          <button
-            onClick={() => navigate("/checkout")}
-            className="mt-10 mx-auto w-2/3 h-14 block border cursor-pointer text-lg rounded-border-radius hover:bg-black hover:text-white duration-300"
-          >
-            Check Out
-          </button>
+          <Link to={"/checkout"}>
+            <button className="mt-10 mx-auto w-2/3 h-14 block border cursor-pointer text-lg rounded-border-radius hover:bg-black hover:text-white duration-300">
+              Check Out
+            </button>
+          </Link>
         </div>
       </div>
     </div>
