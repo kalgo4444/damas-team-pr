@@ -3,14 +3,18 @@ import Card from '../card/Card';
 import Skeleton from '../skeleton/Skeleton';
 import { useFetch } from '../../hooks/useFetch';
 
-const Products = ({ data: productsData }) => {
+const Products = ({ data: productsData , title}) => {
   const { data, error, loading } = useFetch("/products", { limit: 8, skip: 5 });
-
   const displayData = productsData || data?.products;
+
 
   return (
     <div className='text-center'>
-      <h2 className='text-center font-bold text-[40px] mb-[32px]'>Our Products</h2>
+          {title !== null && (
+      <h2 className='text-center font-bold text-[40px] mb-[32px] mt-[60px]'>
+        {title || 'Our Products'}
+      </h2>
+    )}
 
       {error && <p className="text-red-500 text-center">Something went wrong</p>}
 
