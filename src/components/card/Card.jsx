@@ -17,12 +17,12 @@ const Card = ({ data }) => {
         {data?.map(product => (
           <div
             key={product.id}
-            className="relative group flex flex-col overflow-hidden bg-white transition-shadow duration-300 hover:shadow-xl rounded-md border"
+            className="relative group flex flex-col overflow-hidden bg-white transition-shadow duration-300 hover:shadow-xl rounded-md border border-second"
           >
             <div className="h-[280px] bg-white overflow-hidden cursor-pointer relative">
-			<div className="absolute top-2 right-[-60px] w-[48px] h-[48px] bg-[#EF7F7F] text-white text-sm font-bold flex items-center justify-center rounded-full translate-x-0 group-hover:translate-x-[-70px] transition-transform duration-300 max-[760px]:top-2 max-[760px]:right-2 max-[760px]:group-hover:translate-x-[0px]">
-			-30%
-			</div>
+                <div className="absolute top-2 right-[-60px] w-[48px] h-[48px] bg-[#EF7F7F] text-white text-sm font-bold flex items-center justify-center rounded-full translate-x-0 group-hover:translate-x-[-70px] transition-transform duration-300 max-[760px]:top-2 max-[760px]:right-2 max-[760px]:group-hover:translate-x-[0px]">
+                -30%
+                </div>
 
               <img
                 src={product.thumbnail}
