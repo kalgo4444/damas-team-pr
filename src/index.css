@@ -1,57 +1,60 @@
 @font-face {
-	font-family: Poppins;
-	src: url("./assets/fonts/Poppins-Regular.ttf");
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins-Regular.ttf");
 }
 @import "tailwindcss";
 body {
-	font-family: Poppins;
+  font-family: Poppins;
 }
 * {
-	/* border: 1px solid red !important; */
+  /* border: 1px solid red !important; */
 }
 .container {
-	max-width: 1268px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 16px;
-	padding-right: 16px;
+  max-width: 1268px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .isActive {
-	border: 2px solid var(--color-main);
+  border: 2px solid var(--color-main);
 }
 .isActive2 {
-	background: var(--color-main);
+  background: var(--color-main);
+}
+.nav_link.active {
+  color: var(--color-main);
 }
 @theme {
-	--color-main: #b88e2f;
-	--color-second: #f9f1e7;
-	--color-second-text: #898989;
-	--font-Poppins: Poppins;
+  --color-main: #b88e2f;
+  --color-second: #f9f1e7;
+  --color-second-text: #898989;
+  --font-Poppins: Poppins;
 
-	--text-global-title: 32px;
-	--text-global-desc: 20px;
+  --text-global-title: 32px;
+  --text-global-desc: 20px;
 
-	--radius-border-radius: 10px;
-	--radius-border-radius-middle: 5px;
+  --radius-border-radius: 10px;
+  --radius-border-radius-middle: 5px;
 
-	--text-hero-title: 52px;
-	--text-hero-desc: 18px;
+  --text-hero-title: 52px;
+  --text-hero-desc: 18px;
 
-	--text-range-title: 24px;
+  --text-range-title: 24px;
 
-	--text-products-title: 40px;
-	--color-card-bg: #f4f5f7;
-	--color-card-del-text: #b0b0b0;
-	--text-card-title: 24px;
-	--text-card-text: 1rem;
-	--text-card-price: 20px;
+  --text-products-title: 40px;
+  --color-card-bg: #f4f5f7;
+  --color-card-del-text: #b0b0b0;
+  --text-card-title: 24px;
+  --text-card-text: 1rem;
+  --text-card-price: 20px;
 
-	--text-footer-title: 24px;
-	--text-footer-text: 1rem;
+  --text-footer-title: 24px;
+  --text-footer-text: 1rem;
 
-	--text-product-title: 42px;
-	--text-product-price: 24px;
-	--text-product-text: 14px;
-	--color-product-second: #9f9f9f;
+  --text-product-title: 42px;
+  --text-product-price: 24px;
+  --text-product-text: 14px;
+  --color-product-second: #9f9f9f;
 }
