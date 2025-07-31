@@ -76,7 +76,7 @@ const PriceCart = ({ data }) => {
                   <td>
                     <button
                       onClick={() => toggleToCart(item)}
-                      className=" text-4xl md:text-2xl text-main cursor-crosshair"
+                      className=" text-4xl md:text-2xl text-main cursor-pointer"
                     >
                       <MdDelete />
                     </button>

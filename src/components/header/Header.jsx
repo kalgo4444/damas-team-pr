@@ -67,21 +67,24 @@ const Header = () => {
           </NavLink>
         </div>
 
-        <div className="flex gap-5 items-center max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:w-full max-sm:h-14 max-sm:bg-white max-sm:justify-between max-sm:px-5">
-          <NavLink to={"/"} className="cursor-pointer text-2xl sm:hidden">
+        <div className="flex gap-5 items-center max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:w-full max-sm:h-14 max-sm:bg-white max-sm:justify-evenly max-sm:px-5">
+          <NavLink
+            to={"/"}
+            className="cursor-pointer text-2xl sm:hidden nav_link"
+          >
             <IoHomeOutline />
           </NavLink>
-          <NavLink to={"/blog"}>
+          <NavLink className="nav_link" to={"/blog"}>
             <FaRegUser className="cursor-pointer" size={20} />
           </NavLink>
-          <NavLink to={"/search"}>
+          <NavLink className="nav_link" to={"/search"}>
             <BsSearch className="cursor-pointer" size={20} />
           </NavLink>
-          <NavLink className="relative" to={"/wishlist"}>
+          <NavLink className="relative nav_link" to={"/wishlist"}>
             <AiOutlineHeart className="cursor-pointer" size={20} />
             <ItemCount count={wishlist} />
           </NavLink>
-          <NavLink className="relative" to={"/cart"}>
+          <NavLink className="relative nav_link" to={"/cart"}>
             <AiOutlineShoppingCart className="cursor-pointer" size={20} />
             <ItemCount count={cart} />
           </NavLink>
