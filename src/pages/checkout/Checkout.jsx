@@ -11,7 +11,6 @@ const CHAT_ID = "";
 
 //https://api.telegram.org/bot[8447874613:AAHI85W-u9YjnrMXUpTHDO-ZERpYL4wUJsE]/sendMessage?chat_id=[your chat_id]
 
-
 const Checkout = () => {
   const { cart, clearCart } = useCart();
 
@@ -200,7 +199,9 @@ const Checkout = () => {
               Subtotal
             </span>
             <span className="text-black font-poppins text-base font-light leading-6 text-left">
-              {cart.reduce((sum, item) => sum + item.price * item.quantity, 0)}{" "}
+              {cart
+                .reduce((sum, item) => sum + item.price * item.quantity, 0)
+                .toFixed(2)}{" "}
               Rs
             </span>
           </div>
@@ -209,7 +210,9 @@ const Checkout = () => {
               Total
             </span>
             <span className="text-[#b88e2f] font-poppins text-2xl font-bold leading-[36px] text-left">
-              {cart.reduce((sum, item) => sum + item.price * item.quantity, 0)}{" "}
+              {cart
+                .reduce((sum, item) => sum + item.price * item.quantity, 0)
+                .toFixed(2)}{" "}
               Rs
             </span>
           </div>

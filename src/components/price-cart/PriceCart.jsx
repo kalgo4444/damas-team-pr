@@ -5,7 +5,7 @@ import { useCart } from "../../zustand/useCart";
 import { Link } from "react-router-dom";
 
 const PriceCart = ({ data }) => {
-  const { toggleToCart, cart } = useCart();
+  const { toggleToCart, cart, incCart, decCart } = useCart();
   const navigate = useNavigate();
   const price = cart
     .reduce((acc, item) => acc + item.price * item.quantity, 0)
@@ -50,8 +50,21 @@ const PriceCart = ({ data }) => {
                     Rs. {item.price}
                   </td>
                   <td>
-                    <div className="border border-gray-300 rounded-border-radius size-10 flex items-center justify-center">
-                      {item.quantity}
+                    <div className="border w-[100px] border-gray-300 rounded-border-radius size-10 flex items-center justify-between">
+                      <button
+                        disabled={item.quantity <= 1}
+                        onClick={() => decCart(item)}
+                        className="flex-1/2 active:bg-gray-100 h-full disabled:opacity-10"
+                      >
+                        -
+                      </button>
+                      <span className="px-2">{item.quantity}</span>
+                      <button
+                        onClick={() => incCart(item)}
+                        className="flex-1/2 active:bg-gray-100 h-full disabled:opacity-10"
+                      >
+                        +
+                      </button>
                     </div>
                   </td>
                   <td
