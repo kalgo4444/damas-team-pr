@@ -5,14 +5,9 @@ import axios from "axios";
 
 const BOT_TOKEN = "8447874613:AAHI85W-u9YjnrMXUpTHDO-ZERpYL4wUJsE";
 const USER_ID = "6128494778";
-const CHAT_ID = "";
-
-//  https://api.telegram.org/bot[8447874613:AAHI85W-u9YjnrMXUpTHDO-ZERpYL4wUJsE]/getUpdates
-
-//https://api.telegram.org/bot[8447874613:AAHI85W-u9YjnrMXUpTHDO-ZERpYL4wUJsE]/sendMessage?chat_id=[your chat_id]
 
 const Checkout = () => {
-  const { cart, clearCart } = useCart();
+  const { cart } = useCart();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,8 +49,11 @@ const Checkout = () => {
   if (!cart.length) return <Navigate to="/cart" replace />;
 
   return (
-    <div className="max-w-7xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-2 gap-10">
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-7xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-2 gap-10"
+    >
+      <div className="space-y-4">
         <h2 className="text-2xl font-bold">Billing details</h2>
         <div className="flex gap-[31px]">
           <div>
@@ -172,15 +170,9 @@ const Checkout = () => {
           placeholder="Additional Information"
           className="w-[453px] h-[75px] border border-[#9f9f9f] rounded-[10px] bg-white px-4 py-2"
         />
-        <button
-          type="submit"
-          className=" border py-3 rounded-[15px] hover:bg-black hover:text-white transition absolute w-[318px] h-[64px] left-[883px] right-[-668px] top-[630px] bottom-[-566px]"
-        >
-          Place order
-        </button>
-      </form>
+      </div>
 
-      <div className="space-y-6 ">
+      <div className="space-y-6">
         <div className="w-[608px]">
           <div className="flex">
             <h2 className="text-xl font-semibold mb-4">Product</h2>
@@ -218,7 +210,6 @@ const Checkout = () => {
           </div>
         </div>
         <hr className="text-[#D9D9D9]" />
-
         <div>
           <h3 className="font-semibold mb-2">Payment Method</h3>
           <br />
@@ -254,8 +245,14 @@ const Checkout = () => {
             <br /> for other purposes described in our <b>privacy policy</b>.
           </p>
         </div>
+        <button
+          type="submit"
+          className="mt-5 w-full border py-3 rounded-[15px] hover:bg-black hover:text-white"
+        >
+          Place order
+        </button>
       </div>
-    </div>
+    </form>
   );
 };
 
