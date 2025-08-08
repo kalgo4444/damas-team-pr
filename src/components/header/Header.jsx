@@ -10,6 +10,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import ItemCount from "./ItemCount";
 import { useCart } from "../../zustand/useCart";
 import { useStore } from "../../zustand/useStore";
+import { CiShoppingCart, CiHeart, CiUser, CiSearch } from "react-icons/ci";
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,7 +21,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 left-0 w-full bg-white z-50 shadow">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <NavLink to="/">
+        <NavLink onClick={() => scrollTo(0, 0)} to="/">
           <img src={mainLogo} alt="main logo" className="h-8 md:h-auto" />
         </NavLink>
 
@@ -75,17 +76,17 @@ const Header = () => {
             <IoHomeOutline />
           </NavLink>
           <NavLink className="nav_link" to={"/blog"}>
-            <FaRegUser className="cursor-pointer" size={20} />
+            <CiUser className="cursor-pointer" size={20} />
           </NavLink>
           <NavLink className="nav_link" to={"/search"}>
-            <BsSearch className="cursor-pointer" size={20} />
+            <CiSearch className="cursor-pointer" size={20} />
           </NavLink>
           <NavLink className="relative nav_link" to={"/wishlist"}>
-            <AiOutlineHeart className="cursor-pointer" size={20} />
+            <CiHeart className="cursor-pointer" size={20} />
             <ItemCount count={wishlist} />
           </NavLink>
           <NavLink className="relative nav_link" to={"/cart"}>
-            <AiOutlineShoppingCart className="cursor-pointer" size={20} />
+            <CiShoppingCart className="cursor-pointer" size={20} />
             <ItemCount count={cart} />
           </NavLink>
         </div>

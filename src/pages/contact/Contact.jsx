@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../../components/banner/Banner";
 import Quality from "../../components/quality/Quality";
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 
 const Contact = () => {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,8 +22,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
-
     const { name, email, subject, message } = formData;
 
     let text = `🛒 <b>Yangi contact keldi</b>%0A%0A`;
@@ -32,9 +33,6 @@ const Contact = () => {
     const token = "8447874613:AAHI85W-u9YjnrMXUpTHDO-ZERpYL4wUJsE";
     const chat_id = "6128494778";
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${text}&parse_mode=HTML`;
-
-    
-
   };
 
   return (
@@ -43,10 +41,13 @@ const Contact = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get In Touch With Us</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Get In Touch With Us
+          </h2>
           <p className="text-[#9F9F9F] leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
-            For More Information About Our Product & Services. Please Feel Free To Drop Us
-            An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!
+            For More Information About Our Product & Services. Please Feel Free
+            To Drop Us An Email. Our Staff Always Be There To Help You Out. Do
+            Not Hesitate!
           </p>
         </div>
 
@@ -57,7 +58,8 @@ const Contact = () => {
               <div>
                 <h4 className="text-lg font-semibold">Address</h4>
                 <p className="text-sm text-gray-700">
-                  236 5th SE Avenue, New York NY10000,<br /> United States
+                  236 5th SE Avenue, New York NY10000,
+                  <br /> United States
                 </p>
               </div>
             </div>
@@ -83,7 +85,9 @@ const Contact = () => {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm font-medium mb-1">Your name</label>
+              <label className="block text-sm font-medium mb-1">
+                Your name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -95,7 +99,9 @@ const Contact = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1">Email address</label>
+              <label className="block text-sm font-medium mb-1">
+                Email address
+              </label>
               <input
                 type="email"
                 name="email"

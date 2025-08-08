@@ -13,7 +13,6 @@ const Wishlist = () => {
   return (
     <div>
       <Banner title={"Wishlist"} text={"Wishlist"} />
-      <div className="mb-[50px]"></div>
       {wishlist.length === 0 ? (
         <Empaty />
       ) : (
