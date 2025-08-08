@@ -2,6 +2,9 @@
   font-family: Poppins;
   src: url("./assets/fonts/Poppins-Regular.ttf");
 }
+* {
+  scroll-behavior: smooth;
+}
 @import "tailwindcss";
 body {
   font-family: Poppins;
