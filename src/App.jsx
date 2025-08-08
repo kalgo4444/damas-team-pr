@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Lodaing from "./components/lodaing";
 
 const Home = React.lazy(() => import("./pages/home/Home"));
 const NotFound = React.lazy(() => import("./pages/not-found/NotFound"));
@@ -16,7 +17,7 @@ const Wishlist = React.lazy(() => import("./pages/wishlist/Wishlist"));
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Suspense fallback={<Lodaing />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index={true} element={<Home />} />
@@ -31,7 +32,7 @@ const App = () => {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </Suspense>
   );
 };
 
