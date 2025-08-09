@@ -68,7 +68,7 @@ const Header = () => {
           </NavLink>
         </div>
 
-        <div className="flex gap-5 items-center max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:w-full max-sm:h-14 max-sm:bg-white max-sm:justify-evenly max-sm:px-5">
+        <div className="flex gap-5 items-center max-sm:fixed max-sm:bottom-0 max-md:border-t max-md:border-neutral-200 max-sm:left-0 max-sm:w-full max-sm:h-14 max-sm:bg-white max-sm:justify-evenly max-sm:px-5">
           <NavLink
             to={"/"}
             className="cursor-pointer text-2xl sm:hidden nav_link"
