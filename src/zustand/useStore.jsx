@@ -1,18 +1,25 @@
 import { create } from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
-const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-export const useStore = create((set) => ({
-  wishlist: storedWishlist,
-
-  toggleWishlist: (product) =>
-    set((state) => {
-      const exists = state.wishlist.some((item) => item.id === product.id);
-      const updatedWishlist = exists
-        ? state.wishlist.filter((item) => item.id !== product.id)
-        : [...state.wishlist, product];
-
-      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-      return { wishlist: updatedWishlist };
-    }),
-}));
+export const useStore = create()(
+  devtools(
+    persist(
+      (set) => ({
+        wishlist: JSON.parse(localStorage.getItem("wishlist")) || [],
+        toggleWishlist: (product) =>
+          set((state) => {
+            const exists = state.wishlist.some(
+              (item) => item.id === product.id
+            );
+            const updatedWishlist = exists
+              ? state.wishlist.filter((item) => item.id !== product.id)
+              : [...state.wishlist, product];
+            return { wishlist: updatedWishlist };
+          }),
+      }),
+      {
+        name: "wishlist",
+      }
+    )
+  )
+);

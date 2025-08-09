@@ -76,7 +76,7 @@ const PriceCart = ({ data }) => {
                   <td>
                     <button
                       onClick={() => toggleToCart(item)}
-                      className=" text-4xl md:text-2xl text-main cursor-crosshair"
+                      className=" text-4xl md:text-2xl text-main cursor-pointer"
                     >
                       <MdDelete />
                     </button>
@@ -87,7 +87,7 @@ const PriceCart = ({ data }) => {
           </table>
         </div>
         {/*  */}
-        <div className="sticky top-[100px] w-full md:w-2/6 min-h-[450px]  rounded-border-radius-middle h-full bg-second pt-14 pb-16">
+        <div className="sticky top-[100px] w-full md:w-2/6  rounded-border-radius-middle h-full bg-second pt-14 pb-16">
           <h2 className="font-semibold text-2xl md:text-3xl text-center">
             Cart Totals
           </h2>

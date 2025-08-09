@@ -10,6 +10,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import ItemCount from "./ItemCount";
 import { useCart } from "../../zustand/useCart";
 import { useStore } from "../../zustand/useStore";
+import { CiShoppingCart, CiHeart, CiUser, CiSearch } from "react-icons/ci";
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,7 +21,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 left-0 w-full bg-white z-50 shadow">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <NavLink to="/">
+        <NavLink onClick={() => scrollTo(0, 0)} to="/">
           <img src={mainLogo} alt="main logo" className="h-8 md:h-auto" />
         </NavLink>
 
@@ -67,22 +68,25 @@ const Header = () => {
           </NavLink>
         </div>
 
-        <div className="flex gap-5 items-center max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:w-full max-sm:h-14 max-sm:bg-white max-sm:justify-between max-sm:px-5">
-          <NavLink to={"/"} className="cursor-pointer text-2xl sm:hidden">
+        <div className="flex gap-5 items-center max-sm:fixed max-sm:bottom-0 max-sm:left-0 max-sm:w-full max-sm:h-14 max-sm:bg-white max-sm:justify-evenly max-sm:px-5">
+          <NavLink
+            to={"/"}
+            className="cursor-pointer text-2xl sm:hidden nav_link"
+          >
             <IoHomeOutline />
           </NavLink>
-          <NavLink to={"/blog"}>
-            <FaRegUser className="cursor-pointer" size={20} />
+          <NavLink className="nav_link" to={"/blog"}>
+            <CiUser className="cursor-pointer" size={20} />
           </NavLink>
-          <NavLink to={"/search"}>
-            <BsSearch className="cursor-pointer" size={20} />
+          <NavLink className="nav_link" to={"/search"}>
+            <CiSearch className="cursor-pointer" size={20} />
           </NavLink>
-          <NavLink className="relative" to={"/wishlist"}>
-            <AiOutlineHeart className="cursor-pointer" size={20} />
+          <NavLink className="relative nav_link" to={"/wishlist"}>
+            <CiHeart className="cursor-pointer" size={20} />
             <ItemCount count={wishlist} />
           </NavLink>
-          <NavLink className="relative" to={"/cart"}>
-            <AiOutlineShoppingCart className="cursor-pointer" size={20} />
+          <NavLink className="relative nav_link" to={"/cart"}>
+            <CiShoppingCart className="cursor-pointer" size={20} />
             <ItemCount count={cart} />
           </NavLink>
         </div>
