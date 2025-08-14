@@ -24,7 +24,7 @@ const Card = ({ data }) => {
                   -30%
                 </div>
               </div>
-              <div className="absolute top-[60px] right-[-60px] w-[48px] h-[48px]  translate-x-0 group-hover:translate-x-[-70px] transition-transform duration-300 max-[760px]:top-2 max-[760px]:right-2 max-[760px]:group-hover:translate-x-[0px] text-3xl">
+              <div className="absolute top-[60px] right-[-60px] w-[48px] h-[48px]  translate-x-0 group-hover:translate-x-[-70px] transition-transform duration-300 max-[760px]:top-[60px] max-[760px]:right-2 max-[760px]:group-hover:translate-x-[0px] text-3xl">
                 <button
                   onClick={() => toggleWishlist(product)}
                   className="cursor-pointer"
@@ -36,7 +36,7 @@ const Card = ({ data }) => {
                   )}
                 </button>
               </div>
-              <div className="absolute top-[90px] right-[-60px] w-[48px] h-[48px]  translate-x-0 group-hover:translate-x-[-70px] transition-transform duration-400 max-[760px]:top-2 max-[760px]:right-2 max-[760px]:group-hover:translate-x-[0px] text-3xl">
+              <div className="absolute top-[90px] right-[-60px] w-[48px] h-[48px]  translate-x-0 group-hover:translate-x-[-70px] transition-transform duration-400 max-[760px]:top-[90px] max-[760px]:right-2 max-[760px]:group-hover:translate-x-[0px] text-3xl">
                 <button
                   onClick={() => toggleToCart(product)}
                   className="cursor-pointer"
